@@ -1,17 +1,29 @@
 <!DOCTYPE html>
-<html ng-app="">
+<html ng-app="Mushrooms">
 <head>
     <title>Mushrooms</title>
-    <link rel="stylesheet" type="text/css" href="lib/node_modules/materialize-css/dist/css/materialize.css">
+    <!-- <link rel="stylesheet" type="text/css" href="lib/node_modules/materialize-css/dist/css/materialize.css"> -->
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
 
+    <form>
+        <input type="text" ng-model="searchText">
+        <br />
+        <input type="radio" id="poisonous" value="poisonous">Poisonous<br />
+        <input type="radio" id="non-poisonous" value="non-poisonous">Non-Poisonious
+    </form>
+
+    <div ng-view>
+        <!-- Area for content to change -->
+    </div>
+
+</div>
 
 <script src="lib/node_modules/angular/angular.js"></script>
 <script src="lib/node_modules/angular-route/angular-route.js"></script>
-<script src="lib/node_modules/jquery/dist/jquery.js"></script>
-<script src="lib/node_modules/materialize-css/dist/js/materialize.js"></script>
-<script src="build/app.js"></script>
+<script src="app/app.js"></script>
+<script src="app/controllers/MushroomCtrl.js"></script>
+<script src="app/factories/MushroomFactory.js"></script>
 </body>
 </html>

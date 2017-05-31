@@ -1,0 +1,29 @@
+<article class="product-list">
+
+  <header><h1>List of Mushrooms</h1></header>
+
+  <section>
+
+    <div ng-repeat="item in mushrooms| filter: searchText"">
+      <p>{{ item.name }}</p>
+    </div>
+
+    <h2>Non-Poisonous</h2>
+    <div ng-repeat="item in mushrooms">
+        <div ng-show="{{ item.edible }}">
+          <p>{{ item.name }}</p>
+          <p> {{item.description}}</p>
+        </div>
+    </div>
+
+    <h2>Poisonous</h2>
+    <div ng-repeat="item in mushrooms">
+        <div ng-hide="{{ item.edible }}">
+          <p>{{ item.name }}</p>
+          <p> {{item.description}}</p>
+        </div>
+    </div>
+
+  </section>
+
+</article>
