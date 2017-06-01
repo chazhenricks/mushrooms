@@ -1,12 +1,17 @@
 "use strict";
 
-var app = angular.module("Mushrooms", ['ngRoute']);
+var app = angular.module("Mushrooms", ['ngRoute', 'angular-toArrayFilter']);
 
 app.config(function($routeProvider){
     $routeProvider
-    .when('/', {
-        templateUrl: "partials/mushroom-list.html",
-        controller: "MushroomCtrl"
+    .when('/poisonous', {
+        templateUrl: "partials/poisounous.html"
+    })
+    .when("/non-poisonous" ,{
+        templateUrl: "partials/non-poisounous.html"
     })
     .otherwise('/');
 });
+
+
+

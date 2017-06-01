@@ -1,0 +1,7 @@
+    <h2>Non-Poisonous</h2>
+    <div ng-repeat="item in mushrooms| toArray:false | filter: searchText">
+        <div ng-show="{{ item.edible }}">
+          <p>{{ item.name }}</p>
+          <p> {{item.description}}</p>
+        </div>
+    </div>

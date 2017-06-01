@@ -5,14 +5,13 @@
     <!-- <link rel="stylesheet" type="text/css" href="lib/node_modules/materialize-css/dist/css/materialize.css"> -->
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
-<body>
+<body ng-controller="MushroomCtrl">
 
-    <form>
-        <input type="text" ng-model="searchText">
+
+        <input type="text" ng-model="searchText" />
         <br />
-        <input type="radio" id="poisonous" value="poisonous">Poisonous<br />
-        <input type="radio" id="non-poisonous" value="non-poisonous">Non-Poisonious
-    </form>
+        <input type="radio" id="poisonous" name="kind" ng-click="RadioChange('poisonous')" value="poisonous">Poisonous<br />
+        <input type="radio" id="non-poisonous" name="kind" ng-click="RadioChange('non-poisonous')" value="non-poisonous">Non-Poisonious
 
     <div ng-view>
         <!-- Area for content to change -->
@@ -21,6 +20,7 @@
 </div>
 
 <script src="lib/node_modules/angular/angular.js"></script>
+<script src="lib/bower_components/angular-toArrayFilter/toArrayFilter.js"></script>
 <script src="lib/node_modules/angular-route/angular-route.js"></script>
 <script src="app/app.js"></script>
 <script src="app/controllers/MushroomCtrl.js"></script>
