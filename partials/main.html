@@ -1,0 +1,21 @@
+ <input type="text" ng-model="searchText" />
+    <br />
+    <input type="radio" id="poisonous" name="kind" ng-model='radioSelect.edible' value="false"> Poisonous<br />
+    <input type="radio" id="non-poisonous" name="kind" ng-model='radioSelect.edible' value="true">Non-Poisonious
+
+
+<h2>Poisonous</h2>
+<div ng-repeat="item in mushrooms| toArray:false | filter: searchText | filter: radioSelect">
+    <div ng-hide="{{ item.edible }}">
+      <p>{{ item.name }}</p>
+      <p> {{item.description}}</p>
+    </div>
+</div>
+
+<h2>Non-Poisonous</h2>
+<div ng-repeat="item in mushrooms| toArray:false | filter: searchText | filter: radioSelect">
+    <div ng-show="{{ item.edible }}">
+      <p>{{ item.name }}</p>
+      <p> {{item.description}}</p>
+    </div>
+</div>

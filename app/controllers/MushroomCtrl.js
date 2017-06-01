@@ -8,10 +8,10 @@ app.controller("MushroomCtrl", function($scope,$location, MushroomFactory){
         console.log("mushroom", $scope.mushrooms);
     });
 
-    $scope.RadioChange = function (s) {
-            if(s === "poisonous"){
+    $scope.RadioChange = function (value) {
+            if(value === "poisonous"){
                 $location.path("/poisonous");
-            }else if(s === "non-poisonous"){
+            }else if(value === "non-poisonous"){
                 $location.path("/non-poisonous");
             }
         };
